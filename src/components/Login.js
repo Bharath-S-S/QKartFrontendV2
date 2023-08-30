@@ -130,7 +130,7 @@ const Login = () => {
   const persistLogin = (token, username, balance) => {
     localStorage.setItem('token', token)
     localStorage.setItem('username', username)
-    localStorage.setItem('balanace', balance)
+    localStorage.setItem('balance', balance)
   };
 
   return (

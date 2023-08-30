@@ -39,7 +39,7 @@ const clear=()=>{
         >LOGOUT</Button></Stack>
       ):(
         <Stack direction="row" spacing={2}>
-          <Button  
+          <Button 
             onClick={(e)=>{history.push("/login")}}
           >LOGIN</Button>
         <Button  variant="contained" onClick={(e)=>{history.push("/register")}}>REGISTER</Button>

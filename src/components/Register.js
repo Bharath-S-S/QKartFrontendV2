@@ -108,7 +108,7 @@ const Register = () => {
       enqueueSnackbar("Password must be at least 6 characters",{ variant: 'warning' }
       );
       return false;
-    }else if(data.password !== data.confirmPasswordconfirmPassword){
+    }else if(data.password !== data.confirmPassword){
       enqueueSnackbar("Passwords do not match",{ variant: 'warning' }
       );
       return false;

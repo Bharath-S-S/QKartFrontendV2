@@ -53,7 +53,7 @@ const Register = () => {
     try {
       if (validateInput(formData)){
         setLoading(true)
-        let res = await axios.post(`$(config.endpoint}/auth/register`, {
+        let res = await axios.post(`${config.endpoint}/auth/register`, {
           username: formData.username,
           password: formData.password
           })

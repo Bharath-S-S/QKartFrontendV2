@@ -11,26 +11,28 @@ import {
 import React from "react";
 import "./ProductCard.css";
 
-const ProductCard = ({ product, handleAddToCart }) => {
+const ProductCard = ({ product, handleAddToCart, isLoggedIn, productInCart, productList }) => {
   return (
-   <Card className="card">
-    <CardMedia component="img" alt={product.name} image={product.image}/>
-    <CardContent>
-      <Typography>{product.name}</Typography>
-      <Typography fontWeight="700">${product.cost}</Typography>
-      <Rating value={product.rating}readOnly />
-    </CardContent>
-    <CardActions>
-      <Button
-      variant="contained"
-      fullWidth
-      startIcon={<AddShoppingCartOutlined />}
-      onClick={handleAddToCart}
-      >
-        Add To Cart
-      </Button>
-    </CardActions>
-  </Card>
+    <Card className="card">
+       <CardMedia
+        component="img"
+        height="260"
+        image={product.image}
+        alt={product.name}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h6" component="div">
+          {product.name}
+        </Typography>
+        <Typography variant="h5">
+          &#36;{product.cost}
+        </Typography><br/>
+        <Rating name="read-only" value={product.rating} readOnly />
+      </CardContent>
+      <CardActions>
+        <Button variant="contained" startIcon={<AddShoppingCartOutlined />} onClick={()=>handleAddToCart(isLoggedIn,productInCart,productList,product["_id"],1,{preventDuplicate:true})} fullWidth>ADD TO CART</Button>
+      </CardActions>
+    </Card>
   );
 };
 
